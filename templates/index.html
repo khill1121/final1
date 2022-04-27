@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Florida Citrus Industry</h1>
+<h2>From 2002 to 2021</h2>
+<p>Florida is known for their citrus. However, in recent years, the citrus industry in Florida has decreased production significantly and Florida has leaned more towards its tourism industry rather than agriculture.</p>
+<p>Click on any of the 25 prominent citrus producing counties in Florida to learn more about the county's citrus production, acreage and trees over the last 20 years.</p>
+
+<ul>
+    {% for pair in pairs %}
+        <li><a href="{{ url_for( 'detail', num=pair[0] ) }}">{{ pair[1] }}</a></li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}

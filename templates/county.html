@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{{ county['Name'] }}</h1>
+
+<img class="right" src="{{ url_for('static', filename='images/' + county['Image']) }}" alt="Line Graph of County Data">
+
+<p>{{ county['Name'] }} produced {{ county['2002_Pro'] }} boxes of citrus in 2002. They produced {{ county['2021_Pro'] }} boxes in 2021. A change of {{ county['Pro_Change'] }}.
+	There was also a change in the acreage used for citrus production and citrus tree population during this time. In 2002, {{ county['2002_Acre'] }} acres were used for commercial citrus. {{ county['2021_Acre'] }} acres are being used as of the 2021 data. This is a {{ county['Acre_Change'] }} change.
+	Finally there were {{ county['2002_Trees'] }} trees in 2002 and {{ county['2021_Trees'] }} in 2021. This is a change of {{ county['Trees_Change'] }}.
+</p>
+
+<p><a href="{{ url_for('index') }}">Return to the list</a> to select a different county.</p>
+
+{% endblock %}
